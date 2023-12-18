@@ -1,16 +1,18 @@
 let CountDown = ()=> {
-    let dateRef = (param)=>   new Date(param);
-    let staticDateRefRef = dateRef('01'+"/"+'01'+"/"+'2024')
+    let currentDate = new Date().getTime()
+    let launchDate = new Date('December 31, 2023 23:59:59').getTime()
+    // let dateRef = (param)=>   new Date(param);
+    // let staticDateRefRef = dateRef('01'+"/"+'01'+"/"+'2024')
     let launchTimeInfo = {
-        // staticLaunchDate: "dateRef('01/01/2024').toLocaleDateString()",
-        // day: "staticDateRefRef.getUTCDate()",
-        // hour: "staticDateRefRef.getUTCHours()",
-        // minutes: "staticDateRefRef.getMinutes()",
-        // seconds: "staticDateRefRef.getUTCSeconds()",
-        day: staticDateRefRef.getUTCDate(),
-        hour: staticDateRefRef.getUTCHours(),
-        minutes: staticDateRefRef.getMinutes(),
-        seconds: staticDateRefRef.getUTCSeconds()
+        staticLaunchDate: "dateRef('01/01/2024').toLocaleDateString()",
+        day: "staticDateRefRef.getUTCDate()",
+        hour: "staticDateRefRef.getUTCHours()",
+        minutes: "staticDateRefRef.getMinutes()",
+        seconds: "staticDateRefRef.getUTCSeconds()",
+        // day: staticDateRefRef.getUTCDate(),
+        // hour: staticDateRefRef.getUTCHours(),
+        // minutes: staticDateRefRef.getMinutes(),
+        // seconds: staticDateRefRef.getUTCSeconds()
 
     }
     return (
