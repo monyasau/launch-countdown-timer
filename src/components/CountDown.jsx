@@ -1,18 +1,40 @@
+import { useEffect , useState} from "react"
+
 let CountDown = ()=> {
     let currentDate = new Date().getTime()
     let launchDate = new Date('December 31, 2023 23:59:59').getTime()
     let timeTillLaunch = launchDate-currentDate
     console.log(timeTillLaunch);
     let launchTimeInfo ={};
-    if (timeTillLaunch>0) {
-        launchTimeInfo = {
-            staticLaunchDate: launchDate,
-            day: Math.floor(timeTillLaunch/(1000*60*60*24)),
-            hour: Math.floor((timeTillLaunch%(1000*60*60*24))/(1000*60*60)),
-            minutes: Math.floor((timeTillLaunch%(1000*60*60)/(1000*60))),
-            seconds: Math.floor((timeTillLaunch%(1000*60))/1000),
-        }
-    }
+
+    // useEffect(() => {
+    //     // Set up the interval, calling updateObject every 1000 milliseconds (1 second)
+    //     const intervalId = setInterval(() => {
+    //             launchTimeInfo = {
+    //                 staticLaunchDate: new Date(launchDate+86400000).toLocaleDateString(),
+    //                 day: Math.floor(timeTillLaunch/(1000*60*60*24)),
+    //                 hour: Math.floor((timeTillLaunch%(1000*60*60*24))/(1000*60*60)),
+    //                 minutes: Math.floor((timeTillLaunch%(1000*60*60)/(1000*60))),
+    //                 seconds: Math.floor((timeTillLaunch%(1000*60))/1000),
+    //             }
+    //     }, 1000);
+    
+    //     // Clean up the interval on component unmount to prevent memory leaks
+    //     return () => clearInterval(intervalId);
+    //   }, []);
+
+    // if (timeTillLaunch>0) {
+    //     launchTimeInfo = {
+    //         staticLaunchDate: new Date(launchDate+86400000).toLocaleDateString(),
+    //         day: Math.floor(timeTillLaunch/(1000*60*60*24)),
+    //         hour: Math.floor((timeTillLaunch%(1000*60*60*24))/(1000*60*60)),
+    //         minutes: Math.floor((timeTillLaunch%(1000*60*60)/(1000*60))),
+    //         seconds: Math.floor((timeTillLaunch%(1000*60))/1000),
+    //     }
+    // }
+
+
+    
     // let dateRef = (param)=>   new Date(param);
     // let staticDateRefRef = dateRef('01'+"/"+'01'+"/"+'2024')
     // let launchTimeInfo = {
