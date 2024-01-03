@@ -10,7 +10,7 @@ export default function TopNav() {
       <div className="flex max-w-screen-xl w-full mx-auto justify-between py-2 md:px-0 px-4">
         <div>
           <a href="/" className="text-xl font-bold">
-            ThisIsAbefe
+            LOGO
           </a>
         </div>
 
@@ -19,10 +19,7 @@ export default function TopNav() {
             Home
           </a>
           <a href="#" className="text-dark-gray hover:underline">
-            Designs
-          </a>
-          <a href="#" className="text-dark-gray hover:underline">
-            Music
+            More apps
           </a>
           <a href="#" className="text-dark-gray hover:underline">
             Contact
@@ -89,13 +86,7 @@ export default function TopNav() {
 
               <li>
                 <a href="/designs" className="hover:text-sky-500">
-                  Designs
-                </a>
-              </li>
-
-              <li>
-                <a className="hover:text-sky-500" href="/music">
-                  Music
+                  More apps
                 </a>
               </li>
 
