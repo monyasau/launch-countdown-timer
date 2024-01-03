@@ -30,20 +30,34 @@ let CountDown = ()=> {
 
     return (
         <>
-        <div className=" text-center my-[40%] md:my-[20%]">
-        <div className="">
+        <div className="md:h-[88%] flex items-center">
+        <div className=" text-center  w-full">
+        <div className="" aria-label="header">
             <h3 className="text-center font-bold tracking-[10px]">
                 WE'RE LAUNCHING SOON
             </h3>
         </div>
-            <div className="grid grid-cols-4 w-[70%] mx-auto">
-                <div className="bg-dark-gray w-[70%]  h-[150px] text-white text-7xl"><h1>{launchTimeInfo.day}</h1></div>
-                <div className="bg-dark-gray w-[70%]  h-[150px] text-white text-7xl"><h1>{launchTimeInfo.hour}</h1></div>
-                <div className="bg-dark-gray w-[70%]  h-[150px] text-white text-7xl"><h1>{launchTimeInfo.minutes}</h1></div>
-                <div className="bg-dark-gray w-[70%]  h-[150px] text-white text-7xl"><h1>{launchTimeInfo.seconds}</h1></div>
+            <div className="grid grid-cols-4 my-20 w-[70%] mx-auto">
+                <div className="flex items-center flex-col ">
+                <div className="rounded bg-dark-gray w-[70%] flex shadow-xl justify-center items-center h-[150px] text-white text-7xl"><h1>{launchTimeInfo.day}</h1></div>
+                    Days
+                </div>
+                <div className="flex items-center flex-col ">
+                <div className="rounded bg-dark-gray w-[70%] flex shadow-xl justify-center items-center h-[150px] text-white text-7xl"><h1>{launchTimeInfo.hour}</h1></div>
+                Hours
+                </div>
+                <div className="flex items-center flex-col ">
+                <div className="rounded bg-dark-gray w-[70%] flex shadow-xl justify-center items-center h-[150px] text-white text-7xl"><h1>{launchTimeInfo.minutes}</h1></div>
+                Minutes
+                </div>
+                <div className="flex items-center flex-col ">
+                <div className="rounded bg-dark-gray w-[70%] flex shadow-xl justify-center items-center h-[150px] text-white text-7xl"><h1>{launchTimeInfo.seconds}</h1></div>
+                Seconds
+                </div>
             </div>
             
-        <div>Launch date: <span className="text-center">{launchTimeInfo.staticLaunchDate}</span></div>
+        <div className="text-center">Launch date: {launchTimeInfo.staticLaunchDate}</div>
+            </div>
             </div>
             </>
     );
