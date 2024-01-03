@@ -1,15 +1,15 @@
-import { useState } from "react";
 import TopNav from "./components/TopNav";
 import CountDown from "./components/CountDown";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div className="h-screen">
     
       <TopNav />
       <CountDown/>
+      <Footer/>
     </div>
   );
 }
