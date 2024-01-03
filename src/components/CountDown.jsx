@@ -30,8 +30,8 @@ let CountDown = ()=> {
 
     return (
         <>
-        <div className="mb-10 text-center">
-        <div className="my-20">
+        <div className=" text-center my-[40%] md:my-[20%]">
+        <div className="">
             <h3 className="text-center font-bold tracking-[10px]">
                 WE'RE LAUNCHING SOON
             </h3>
@@ -42,7 +42,8 @@ let CountDown = ()=> {
                 <div className="bg-dark-gray w-[70%]  h-[150px] text-white text-7xl"><h1>{launchTimeInfo.minutes}</h1></div>
                 <div className="bg-dark-gray w-[70%]  h-[150px] text-white text-7xl"><h1>{launchTimeInfo.seconds}</h1></div>
             </div>
-        Launch date: <span className="text-center">{launchTimeInfo.staticLaunchDate}</span>
+            
+        <div>Launch date: <span className="text-center">{launchTimeInfo.staticLaunchDate}</span></div>
             </div>
             </>
     );
