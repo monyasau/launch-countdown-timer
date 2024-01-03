@@ -2,53 +2,32 @@ import { useEffect , useState} from "react"
 
 let CountDown = ()=> {
     let currentDate = new Date().getTime()
-    let launchDate = new Date('December 31, 2023 23:59:59').getTime()
-    let timeTillLaunch = launchDate-currentDate
-    console.log(timeTillLaunch);
-    let launchTimeInfo ={};
+    let launchDate = new Date('December 31, 2024 23:59:59').getTime()
+    const [timeTillLaunch, setTimeTillLaunch] = useState(launchDate-currentDate)
+    console.log("time till",timeTillLaunch);
+    const [launchTimeInfo, setLaunchTimeInfo] = useState({
+        staticLaunchDate: new Date(launchDate+86400000).toLocaleDateString(),
+        day: Math.floor(timeTillLaunch/(1000*60*60*24)),
+        hour: Math.floor((timeTillLaunch%(1000*60*60*24))/(1000*60*60)),
+        minutes: Math.floor((timeTillLaunch%(1000*60*60)/(1000*60))),
+        seconds: Math.floor((timeTillLaunch%(1000*60))/1000),});
 
-    // useEffect(() => {
-    //     // Set up the interval, calling updateObject every 1000 milliseconds (1 second)
-    //     const intervalId = setInterval(() => {
-    //             launchTimeInfo = {
-    //                 staticLaunchDate: new Date(launchDate+86400000).toLocaleDateString(),
-    //                 day: Math.floor(timeTillLaunch/(1000*60*60*24)),
-    //                 hour: Math.floor((timeTillLaunch%(1000*60*60*24))/(1000*60*60)),
-    //                 minutes: Math.floor((timeTillLaunch%(1000*60*60)/(1000*60))),
-    //                 seconds: Math.floor((timeTillLaunch%(1000*60))/1000),
-    //             }
-    //     }, 1000);
+    useEffect(() => {
+                setTimeout(() => {
+                   if (timeTillLaunch>0) {
+        setLaunchTimeInfo({
+            staticLaunchDate: new Date(launchDate+86400000).toLocaleDateString(),
+            day: Math.floor(timeTillLaunch/(1000*60*60*24)),
+            hour: Math.floor((timeTillLaunch%(1000*60*60*24))/(1000*60*60)),
+            minutes: Math.floor((timeTillLaunch%(1000*60*60)/(1000*60))),
+            seconds: Math.floor((timeTillLaunch%(1000*60))/1000),
+        })
+        setTimeTillLaunch(launchDate-currentDate)
+    }
+        }, 1000);
     
-    //     // Clean up the interval on component unmount to prevent memory leaks
-    //     return () => clearInterval(intervalId);
-    //   }, []);
+      }, [launchDate-currentDate]);
 
-    // if (timeTillLaunch>0) {
-    //     launchTimeInfo = {
-    //         staticLaunchDate: new Date(launchDate+86400000).toLocaleDateString(),
-    //         day: Math.floor(timeTillLaunch/(1000*60*60*24)),
-    //         hour: Math.floor((timeTillLaunch%(1000*60*60*24))/(1000*60*60)),
-    //         minutes: Math.floor((timeTillLaunch%(1000*60*60)/(1000*60))),
-    //         seconds: Math.floor((timeTillLaunch%(1000*60))/1000),
-    //     }
-    // }
-
-
-    
-    // let dateRef = (param)=>   new Date(param);
-    // let staticDateRefRef = dateRef('01'+"/"+'01'+"/"+'2024')
-    // let launchTimeInfo = {
-    //     staticLaunchDate: "dateRef('01/01/2024').toLocaleDateString()",
-    //     day: "staticDateRefRef.getUTCDate()",
-    //     hour: "staticDateRefRef.getUTCHours()",
-    //     minutes: "staticDateRefRef.getMinutes()",
-    //     seconds: "staticDateRefRef.getUTCSeconds()",
-    //     // day: staticDateRefRef.getUTCDate(),
-    //     // hour: staticDateRefRef.getUTCHours(),
-    //     // minutes: staticDateRefRef.getMinutes(),
-    //     // seconds: staticDateRefRef.getUTCSeconds()
-
-    // }
     return (
         <>
         <div className="mb-10 text-center">
