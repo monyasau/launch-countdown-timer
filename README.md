@@ -16,3 +16,5 @@ The UI is designed to be responsive, with a visually appealing layout. The count
 
 Launch Status
 Once the launch has occurred, the component switches to a post-launch state, displaying the time elapsed since launch and indicating that the launch has already taken place.
+# Live link
+https://app-launch-countdown.netlify.app/
