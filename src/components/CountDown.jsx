@@ -2,9 +2,8 @@ import { useEffect , useState} from "react"
 
 let CountDown = ()=> {
     let currentDate = new Date().getTime()
-    let launchDate = new Date('December 31, 2024 23:59:59').getTime()
+    let launchDate = new Date(`December 31, ${new Date().getFullYear()-1} 23:59:59`).getTime()
     const [timeTillLaunch, setTimeTillLaunch] = useState(launchDate-currentDate)
-    console.log("time till",timeTillLaunch);
     const [launchTimeInfo, setLaunchTimeInfo] = useState({
         staticLaunchDate: new Date(launchDate+86400000).toLocaleDateString(),
         day: Math.floor(timeTillLaunch/(1000*60*60*24)),
@@ -30,14 +29,14 @@ let CountDown = ()=> {
 
     return (
         <>
-        <div className="md:h-[88%] flex items-center">
+        <div className="h-[75%] flex items-center">
         <div className=" text-center  w-full">
-        <div className="" aria-label="header">
-            <h3 className="text-center font-bold tracking-[10px]">
+        <div className="mt-12 md:mt-0" aria-label="header">
+            <h3 className="text-center font-bold md:tracking-[10px] tracking-wider">
                 WE'RE LAUNCHING SOON
             </h3>
         </div>
-            <div className="grid grid-cols-4 my-20 w-[70%] mx-auto">
+            <div className="grid md:grid-cols-4 grid-cols-2 md:my-20 my-10 md:w-[70%] mx-auto">
                 <div className="flex items-center flex-col ">
                 <div className="rounded bg-dark-gray w-[70%] flex shadow-xl justify-center items-center h-[150px] text-white text-7xl"><h1>{launchTimeInfo.day}</h1></div>
                     Days
